@@ -1,8 +1,15 @@
 {
+  "name": "libdate",
+  "version": "0.1.0",
   "scripts": {
+    "compil": "npx browserify -p tinyify src/main.js -o dist/lib.date.js",
+    "watch": "watchify src/main.js -o dist/lib.date.js",
     "test": "jest"
   },
-  "dependencies": {
-    "jest": "^29.5.0"
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "browserify": "^17.0.0",
+    "tinyify": "^4.0.0",
+    "watchify": "^4.0.0"
   }
 }
