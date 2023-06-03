@@ -1,15 +1,16 @@
 {
   "name": "libdate",
   "version": "0.1.0",
+  "main": "src/main.js",
   "scripts": {
-    "compil": "npx browserify -p tinyify src/main.js -o dist/lib.date.js",
-    "watch": "watchify src/main.js -o dist/lib.date.js",
+    "build": "npx browserify src/main.js --s LibDate | uglifyjs -c > dist/lib.date.min.js",
+    "watch": "npx watchify src/main.js --s LibDate -o dist/lib.date.js",
     "test": "jest"
   },
   "devDependencies": {
-    "jest": "^29.5.0",
     "browserify": "^17.0.0",
-    "tinyify": "^4.0.0",
+    "jest": "^29.5.0",
+    "uglify-js": "^3.17.4",
     "watchify": "^4.0.0"
   }
 }
