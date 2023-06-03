@@ -1,4 +1,4 @@
-const LibDate = require("../dist/lib.date.js")
+const LibDate = require("../dist/esp.lib.date.min.js")
 
 /**
  *

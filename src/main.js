@@ -1,8 +1,8 @@
 /**
  * @return "14:54:26" for 14h54 26s
  */
-const time = function(){
-  const now = new Date()
+const time = function(Now){
+  const now = Now == undefined ? new Date() : Now
   const hh = now.getHours().toString().padStart(2, "0")
   const mm = now.getMinutes().toString().padStart(2, "0")
   const ss = now.getSeconds().toString().padStart(2, "0")
@@ -31,9 +31,7 @@ const elapsedTime = function(Reference){
   return `${hh}:${mm}:${ss}`
 }
 
-/**
- * CommonJS format for NodeJS and Espruino
- */
+//CommonJS style
 module.exports = {
   time,
   elapsedTime,
