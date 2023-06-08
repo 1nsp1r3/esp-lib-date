@@ -2,11 +2,22 @@
  * @return "14:54:26" for 14h54 26s
  */
 const time = function(Now){
-  const now = Now == undefined ? new Date() : Now
+  const now = Now == undefined ? new Date() : new Date(Now)
   const hh = now.getHours().toString().padStart(2, "0")
   const mm = now.getMinutes().toString().padStart(2, "0")
   const ss = now.getSeconds().toString().padStart(2, "0")
   return `${hh}:${mm}:${ss}`
+}
+
+/**
+ * @return "20230629" for 06/29/2023
+ */
+const date = function(Now){
+  const now = Now == undefined ? new Date() : new Date(Now)
+  const year = now.getFullYear().toString()
+  const month = (now.getMonth()+1).toString().padStart(2, "0")
+  const day = now.getDate().toString().padStart(2, "0")
+  return `${year}${month}${day}`
 }
 
 /**
@@ -33,6 +44,7 @@ const elapsedTime = function(Reference){
 
 //CommonJS style
 module.exports = {
-  time,
+  date,
   elapsedTime,
+  time,
 }
